@@ -37,7 +37,7 @@ with st.expander("Customize the prompt"):
 
 st.subheader(":thought_balloon: Voice from your customer")
 comment = st.text_area(
-    "Prompt",
+    "Feedback",
     "The food served in the cafeteria is consistently cold and tasteless. The ingredients don’t seem fresh, and the meals lack variety. I often find myself bringing food from home instead.",
     key="comment"
 )
