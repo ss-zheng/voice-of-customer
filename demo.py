@@ -26,7 +26,7 @@ with st.expander("Customize the prompt"):
     st.subheader("Preset prompt")
     prompt = st.text_area(
         "Prompt",
-        "You are the manager of a corporate or school cafeterias, you receive customer comments feedbacks frequently. Please use humane, friendly, polite and formal writing to reply to your customers."
+        "You are the manager of a corporate or school cafeterias, you receive customer comments feedbacks frequently. Please use humane, friendly, polite and formal writing to reply to your customers.",
         key="prompt",
     )
     st.write(f"{len(prompt)} characters.")
