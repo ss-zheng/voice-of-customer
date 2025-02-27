@@ -26,7 +26,7 @@ with st.expander("Customize the prompt"):
     st.subheader("Preset prompt")
     prompt = st.text_area(
         "Prompt",
-        "You are the manager of a corporate or school cafeterias, you receive customer comments feedbacks frequently. Please use humane, friendly, polite and formal writing to reply to your customers.",
+        "You are the manager of a corporate or school cafeterias, you receive customer comments feedbacks frequently. Please use humane, friendly, polite, inclusive and formal writing to reply to your customers.",
         key="prompt",
     )
     st.write(f"{len(prompt)} characters.")
@@ -39,9 +39,18 @@ comment = st.text_area(
     key="comment"
 )
 
+with st.expander("Advanced"):
+    n_examples = st.number_input(
+            label="Number of examples",
+            min_value=1,
+            max_value=10,
+            step=1,
+            )
 if comment and st.button("Generate Response"):
     st.subheader(":robot_face: :green[AI Assisted Reply]")
-    st.write_stream(get_response(prompt, comment))
+    for i in range(n_examples):
+        st.divider()
+        st.write_stream(get_response(prompt, comment))
 
 
 # generated_reply = comment[::-1]
